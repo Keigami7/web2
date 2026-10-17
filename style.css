@@ -1,0 +1,33 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; max-width: 960px; margin: 0 auto; display: grid; grid-template-rows: auto auto 1fr auto; min-height: 100vh; color: #222; }
+
+/* 1. Background berbeda untuk tiap tag */
+header { background-image: linear-gradient(135deg, #72301e, #0eca24); color: #fff; text-align: center; padding: 28px 16px; }
+nav { background-color: #ffd166; padding: 12px 20px; }
+section { background-color: #a9d6b4; }
+article { background-color: #a5cfeb; padding: 20px; border-radius: 8px; }
+aside { background-image: linear-gradient(#ffe1d6d3, #fca5a5); padding: 20px; border-radius: 8px; }
+footer { background-color: #000000; color: #f80000; text-align: center; padding: 16px; }
+
+/* 2. nav: flexbox, logo kiri, menu kanan */
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: bold; font-size: 1.3rem; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav a { text-decoration: none; color: #222; font-weight: bold; }
+nav a:hover, nav a.aktif { text-decoration: underline; }
+
+/* 3 & 4. section: grid untuk article dan aside */
+section { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; padding: 16px; }
+
+h2 { margin-bottom: 10px; }
+p { line-height: 1.6; margin-bottom: 10px; }
+.foto { width: 140px; height: 140px; border-radius: 50%; margin-bottom: 12px; background-image: linear-gradient(135deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #fff; }
+table { border-collapse: collapse; width: 100%; background: #fff; }
+th, td { border: 1px solid #94a3b8; padding: 8px; text-align: left; }
+th { background: #bae6fd; }
+aside ul { margin-left: 18px; line-height: 1.8; }
+
+@media (max-width: 640px) {
+  section { grid-template-columns: 1fr; }
+  nav { flex-direction: column; gap: 8px; }
+}
